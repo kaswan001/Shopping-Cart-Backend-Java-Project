@@ -1,5 +1,6 @@
 package com.manish.dreamshops.service.product;
 
+import com.manish.dreamshops.dto.ProductDto;
 import com.manish.dreamshops.model.Product;
 import com.manish.dreamshops.request.AddProductRequest;
 import com.manish.dreamshops.request.ProductUpdateRequest;
@@ -18,4 +19,8 @@ public interface IProductService {
     List<Product> getProductsByName(String name);
     List<Product> getProductsByBrandAndName(String brand, String name);
     Long countProductsByBrandAndName(String brand, String name);
+
+    List<ProductDto> getConvertedProducts(List<Product> products);
+
+    ProductDto convertToDto(Product product);
 }
